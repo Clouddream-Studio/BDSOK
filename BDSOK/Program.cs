@@ -46,7 +46,6 @@ namespace BDSOK
             Directory.CreateDirectory("BDSOK_cache");
             foreach (Data webData in webDatas)
             {
-                Output(0, $"开始运行步骤{webData.name}");
                 try
                 {
                     foreach (string runArgs in webData.run)
@@ -55,54 +54,54 @@ namespace BDSOK
                         switch (runArg[0])
                         {
                             case "show":
-                                Output(5, runArgs.Substring(5));
+                                Output(5, $"[{webData.name}] {runArgs.Substring(5)}");
                                 break;
                             case "downloadmatch":
-                                Output(0, $"开始从{runArg[1]}获取下载链接");
+                                Output(0, $"[{webData.name}] 开始从{runArg[1]}获取下载链接");
                                 HttpWebRequest httpWebRequest = WebRequest.CreateHttp(runArg[1]);
                                 httpWebRequest.UserAgent = "User-Agent:BDSOK/0.0.1";
                                 string link = Regex.Match(Encoding.UTF8.GetString(Encoding.Default.GetBytes(new StreamReader(httpWebRequest.GetResponse().GetResponseStream()).ReadToEnd())), runArg[2]).Value;
-                                Output(0, $"开始从{link}下载至{runArg[3]}");
+                                Output(0, $"[{webData.name}] 开始从{link}下载至{runArg[3]}");
                                 webClient.DownloadFile(link, runArg[3]);
                                 break;
                             case "download":
-                                Output(0, $"开始从{runArg[1]}下载至{runArg[2]}");
+                                Output(0, $"[{webData.name}] 开始从{runArg[1]}下载至{runArg[2]}");
                                 webClient.DownloadFile(runArg[1], runArg[2]);
                                 break;
                             case "unzip":
-                                Output(0, $"开始解压{runArg[1]}到{runArg[2]}");
+                                Output(0, $"[{webData.name}] 开始解压{runArg[1]}到{runArg[2]}");
                                 new FastZip().ExtractZip(runArg[1], runArg[2], null);
                                 break;
                             case "copyfile":
-                                Output(0, $"开始复制文件{runArg[1]}到{runArg[2]}");
+                                Output(0, $"[{webData.name}] 开始复制文件{runArg[1]}到{runArg[2]}");
                                 File.Copy(runArg[1], runArg[2]);
                                 break;
                             case "copydir":
-                                Output(0, $"开始复制文件夹{runArg[1]}内文件到{runArg[2]}");
+                                Output(0, $"[{webData.name}] 开始复制文件夹{runArg[1]}内文件到{runArg[2]}");
                                 CopyDir(runArg[1], runArg[2]);
                                 break;
                             case "writefile":
-                                Output(0, $"开始覆写{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始覆写{runArg[1]}");
                                 File.WriteAllText(runArg[1], runArgs.Substring(11 + runArg[1].Length));
                                 break;
                             case "appendfile":
-                                Output(0, $"开始写入{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始写入{runArg[1]}");
                                 File.AppendAllText(runArg[1], runArgs.Substring(12 + runArg[1].Length));
                                 break;
                             case "mkdir":
-                                Output(0, $"开始新建{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始新建{runArg[1]}");
                                 Directory.CreateDirectory(runArg[1]);
                                 break;
                             case "delfile":
-                                Output(0, $"开始删除文件{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始删除文件{runArg[1]}");
                                 File.Delete(runArg[1]);
                                 break;
                             case "deldir":
-                                Output(0, $"开始删除文件夹{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始删除文件夹{runArg[1]}");
                                 Directory.Delete(runArg[1]);
                                 break;
                             case "start":
-                                Output(0, $"开始启动{runArg[1]}");
+                                Output(0, $"[{webData.name}] 开始启动{runArg[1]}");
                                 Process.Start(runArg[1]);
                                 break;
                         }
