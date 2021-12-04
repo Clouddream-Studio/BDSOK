@@ -40,7 +40,7 @@ namespace BDSOK
             {
                 Output(1, "警惕可能夹带私货的开放源！");
                 data = Encoding.UTF8.GetString(Encoding.Default.GetBytes(webClient.DownloadString(argsList.Contains("-link") ? argsList[argsList.IndexOf("-link") + 1] : "http://api.cldem.top:44380/BDSOK/data.json")));
-                Output(0, $"开始从{(argsList.Contains("-link") ? argsList[argsList.IndexOf("-link") + 1] : "http://cldem.top:44380/BDSOK/data.json")}获取信息");
+                Output(0, $"开始从{(argsList.Contains("-link") ? argsList[argsList.IndexOf("-link") + 1] : "http://api.cldem.top:44380/BDSOK/data.json")}获取信息");
             }
             List<Data> webDatas = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Data>>(data);
             Directory.CreateDirectory("BDSOK_cache");
