@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31912.275
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDSOK", "BDSOK\BDSOK.csproj", "{63D16106-0219-4361-AA21-608197D3D2D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDSOK", "BDSOK\BDSOK.csproj", "{694FD925-6FB2-4183-9371-9B3E7B4D3084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{63D16106-0219-4361-AA21-608197D3D2D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63D16106-0219-4361-AA21-608197D3D2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63D16106-0219-4361-AA21-608197D3D2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63D16106-0219-4361-AA21-608197D3D2D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694FD925-6FB2-4183-9371-9B3E7B4D3084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694FD925-6FB2-4183-9371-9B3E7B4D3084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694FD925-6FB2-4183-9371-9B3E7B4D3084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694FD925-6FB2-4183-9371-9B3E7B4D3084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B3272411-FFD1-45CC-83E7-3BA3468E942F}
+		SolutionGuid = {C5BCC916-A38C-4BA0-86F9-4EC63100FFF4}
 	EndGlobalSection
 EndGlobal
