@@ -34,8 +34,6 @@ else
     catch (Exception ex)
     {
         Console.WriteLine(ex);
-        Logger.Trace("请按任意键退出. . .");
-        Console.ReadKey(true);
     }
     Logger.Trace($"开始从{link}获取信息");
 }
